@@ -1,6 +1,7 @@
 import SysTray from "systray";
 import fs from "fs-extra";
 import path from "path";
+import opener from "opener";
 
 const icon = fs.readFileSync(path.join(__dirname, `../assets/logo.ico`));
 
@@ -31,18 +32,9 @@ export const systray = new SysTray({
 
 systray.onClick((action) => {
   if (action.seq_id === 0) {
-    systray.sendAction({
-      type: "update-item",
-      item: {
-        ...action.item,
-        checked: !action.item.checked,
-      },
-      seq_id: action.seq_id,
-    });
+    opener("https://www.google.com");
   } else if (action.seq_id === 1) {
     // open the url
-    console.log("open the url", action);
-  } else if (action.seq_id === 2) {
-    systray.kill();
+    opener("http://localhost:4000");
   }
 });
