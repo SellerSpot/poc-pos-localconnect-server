@@ -6,9 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const mainRouter_1 = __importDefault(require("./routes/mainRouter"));
 const body_parser_1 = __importDefault(require("body-parser"));
+const systray_1 = require("./middlewares/systray");
 const app = express_1.default();
 // declaring middlewares
 app.use(body_parser_1.default.json({ limit: 50 }));
+systray_1.systray;
 // defining main route
 app.use("/v1", mainRouter_1.default);
 // defining default route
