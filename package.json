@@ -21,7 +21,11 @@
   },
   "pkg": {
     "assets": [
-      "dist/assets/logo.ico"
+      "dist/assets/logo.ico",
+      "node_modules/systray/traybin/tray_windows_release.exe"
+    ],
+    "scripts": [
+      "dist/middlewares/systray.js"
     ]
   },
   "dependencies": {
