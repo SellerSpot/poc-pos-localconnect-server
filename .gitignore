@@ -1,3 +1,4 @@
+*.exe
 .idea/
 .vscode/
 node_modules/
@@ -13,4 +14,3 @@ yarn-error.log*
 /.changelog
 .npm/
 yarn.lock
-*.exe
